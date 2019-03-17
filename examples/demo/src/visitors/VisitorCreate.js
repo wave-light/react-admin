@@ -6,6 +6,7 @@ import {
     LongTextInput,
     TabbedForm,
     TextInput,
+    PasswordInput,
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -13,6 +14,8 @@ export const styles = {
     first_name: { display: 'inline-block' },
     last_name: { display: 'inline-block', marginLeft: 32 },
     email: { width: 544 },
+    birthday: { display: 'inline-block' },
+    password: { display: 'inline-block', marginLeft: 32 },
     address: { maxWidth: 544 },
     zipcode: { display: 'inline-block' },
     city: { display: 'inline-block', marginLeft: 32 },
@@ -28,15 +31,8 @@ const VisitorCreate = ({ classes, ...props }) => (
     <Create {...props}>
         <TabbedForm>
             <FormTab label="resources.customers.tabs.identity">
-                <TextInput
-                    autoFocus
-                    source="first_name"
-                    formClassName={classes.first_name}
-                />
-                <TextInput
-                    source="last_name"
-                    formClassName={classes.last_name}
-                />
+                <TextInput autoFocus source="first_name" formClassName={classes.first_name} />
+                <TextInput source="last_name" formClassName={classes.last_name} />
                 <TextInput
                     type="email"
                     source="email"
@@ -44,13 +40,11 @@ const VisitorCreate = ({ classes, ...props }) => (
                     fullWidth={true}
                     formClassName={classes.email}
                 />
-                <DateInput source="birthday" />
+                <DateInput source="birthday" formClassName={classes.birthday} />
+                <PasswordInput source="password" formClassName={classes.password} />
             </FormTab>
             <FormTab label="resources.customers.tabs.address" path="address">
-                <LongTextInput
-                    source="address"
-                    formClassName={classes.address}
-                />
+                <LongTextInput source="address" formClassName={classes.address} />
                 <TextInput source="zipcode" formClassName={classes.zipcode} />
                 <TextInput source="city" formClassName={classes.city} />
             </FormTab>

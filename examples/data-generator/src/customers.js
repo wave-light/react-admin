@@ -11,17 +11,19 @@ export default (db, { serializeDate }) =>
         const last_name = name.lastName();
         const email = internet.email(first_name, last_name);
         const birthday = has_ordered ? date.past(60) : null;
+        const password = internet.password();
+
         return {
             id,
             first_name,
             last_name,
             email,
+            password,
             address: has_ordered ? address.streetName() : null,
             zipcode: has_ordered ? address.zipCode() : null,
             city: has_ordered ? address.city() : null,
             avatar: internet.avatar(),
-            birthday:
-                serializeDate && birthday ? birthday.toISOString() : birthday,
+            birthday: serializeDate && birthday ? birthday.toISOString() : birthday,
             first_seen: serializeDate ? first_seen.toISOString() : first_seen,
             last_seen: serializeDate ? last_seen.toISOString() : last_seen,
             has_ordered: has_ordered,
