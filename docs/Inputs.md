@@ -641,7 +641,7 @@ import { PasswordInput } from 'react-admin';
 
 ![Password Input](./img/password-input.png)
 
-It is possible to change the default behavior and display the value by default via the `initiallyHidden` prop:
+It is possible to change the default behavior and display the value by default via the `initiallyVisible` prop:
 
 ```jsx
 import { PasswordInput } from 'react-admin';

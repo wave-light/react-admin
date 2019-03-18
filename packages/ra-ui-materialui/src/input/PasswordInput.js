@@ -12,21 +12,21 @@ import TextInput from './TextInput';
 
 class PasswordInput extends Component {
     state = {
-        hidden: this.props.initiallyHidden,
+        visible: this.props.initiallyVisible,
     };
 
     toggleVisibility = () => {
-        this.setState(state => ({ hidden: !state.hidden }));
+        this.setState(state => ({ visible: !state.visible }));
     };
 
     render() {
         const { translate, ...rest } = this.props;
-        const { hidden } = this.state;
+        const { visible } = this.state;
 
         return (
             <TextInput
                 {...rest}
-                type={hidden ? 'password' : 'text'}
+                type={visible ? 'text' : 'password'}
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position="end">
@@ -34,7 +34,7 @@ class PasswordInput extends Component {
                                 aria-label={translate('ra.input.password.toggle_visibility')}
                                 onClick={this.toggleVisibility}
                             >
-                                {hidden ? <VisibilityOff /> : <Visibility />}
+                                {visible ? <Visibility /> : <VisibilityOff />}
                             </IconButton>
                         </InputAdornment>
                     ),
@@ -46,11 +46,11 @@ class PasswordInput extends Component {
 
 PasswordInput.propTypes = {
     translate: PropTypes.func.isRequired,
-    initiallyHidden: PropTypes.bool,
+    initiallyVisible: PropTypes.bool,
 };
 
 PasswordInput.defaultProps = {
-    initiallyHidden: true,
+    initiallyVisible: false,
 };
 
 export default compose(

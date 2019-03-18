@@ -11,14 +11,12 @@ export default (db, { serializeDate }) =>
         const last_name = name.lastName();
         const email = internet.email(first_name, last_name);
         const birthday = has_ordered ? date.past(60) : null;
-        const password = internet.password();
 
         return {
             id,
             first_name,
             last_name,
             email,
-            password,
             address: has_ordered ? address.streetName() : null,
             zipcode: has_ordered ? address.zipCode() : null,
             city: has_ordered ? address.city() : null,
@@ -31,6 +29,6 @@ export default (db, { serializeDate }) =>
             has_newsletter: has_ordered ? weightedBoolean(30) : true,
             groups: [], // finalize
             nb_commands: 0,
-            total_spent: 0,
+            total_spent: 0
         };
     });

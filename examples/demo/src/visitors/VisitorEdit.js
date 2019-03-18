@@ -12,8 +12,7 @@ import {
     ReferenceManyField,
     TabbedForm,
     TextField,
-    TextInput,
-    PasswordInput,
+    TextInput
 } from 'react-admin';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -40,7 +39,6 @@ const VisitorEdit = ({ classes, ...props }) => (
                     formClassName={classes.email}
                 />
                 <DateInput source="birthday" formClassName={classes.birthday} />
-                <PasswordInput source="password" formClassName={classes.password} />
             </FormTab>
             <FormTab label="resources.customers.tabs.address" path="address">
                 <LongTextInput source="address" formClassName={classes.address} />
@@ -58,10 +56,7 @@ const VisitorEdit = ({ classes, ...props }) => (
                         <DateField source="date" />
                         <TextField source="reference" />
                         <NbItemsField />
-                        <NumberField
-                            source="total"
-                            options={{ style: 'currency', currency: 'USD' }}
-                        />
+                        <NumberField source="total" options={{ style: 'currency', currency: 'USD' }} />
                         <TextField source="status" />
                         <EditButton />
                     </Datagrid>
@@ -87,10 +82,7 @@ const VisitorEdit = ({ classes, ...props }) => (
                 <SegmentsInput />
                 <NullableBooleanInput source="has_newsletter" />
                 <DateField source="first_seen" style={{ width: 128, display: 'inline-block' }} />
-                <DateField
-                    source="latest_purchase"
-                    style={{ width: 128, display: 'inline-block' }}
-                />
+                <DateField source="latest_purchase" style={{ width: 128, display: 'inline-block' }} />
                 <DateField source="last_seen" style={{ width: 128, display: 'inline-block' }} />
             </FormTab>
         </TabbedForm>
