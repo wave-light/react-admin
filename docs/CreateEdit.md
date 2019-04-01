@@ -743,7 +743,7 @@ export const PostEdit = (props) => (
 Here are the props received by the `Toolbar` component when passed as the `toolbar` prop of the `SimpleForm` or `TabbedForm` components:
 
 * `handleSubmitWithRedirect`: The function to call in order to submit the form. It accepts a single parameter overriding the form's default redirect.
-* `handleSubmit` which is the same prop as in [`react-form`](https://redux-form.com/7.4.2/docs/api/props.md/#-code-handlesubmit-eventorsubmit-function-code-)
+* `handleSubmit` which is the same prop as in [`redux-form`](https://redux-form.com/7.4.2/docs/api/props.md/#-code-handlesubmit-eventorsubmit-function-code-)
 * `invalid`: A boolean indicating whether the form is invalid
 * `pristine`: A boolean indicating whether the form is pristine (eg: no inputs have been changed yet)
 * `redirect`: The default form's redirect
